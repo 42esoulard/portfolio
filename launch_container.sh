@@ -2,4 +2,4 @@
 
 docker build -t portfolio .
 
-docker run -it -v ${PWD}:/app -p 8080:8080 portfolio npm run serve
+docker run -it -v ${PWD}:/app -p 8081:8080 --rm portfolio npm run serve
