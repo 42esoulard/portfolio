@@ -2,9 +2,9 @@
   <div class='home'>
     <div class="home-neon-pretext">Hi, I'm</div>
     <div class="home-neon-wrapper">
-      <div class="home-neon-text">Est<span class="home-neon-text--offset">el</span>l<span class="home-neon-text--offset">e</span></div>
+      <router-link  class="home-neon-text" :to="{ name: 'About'}">Est<span class="home-neon-text--offset">el</span>l<span class="home-neon-text--offset">e</span></router-link>
     </div>
-          <div class="home-subtitle">A <span class="home-subtitle--dev">&lt;dev&gt;</span> who likes neon signs</div>
+    <div class="home-subtitle"><router-link :to="{ name: 'Work'}" class="home-subtitle--dev">a &lt;dev&gt;</router-link><span class="home-subtitle--neon"> who likes neon signs</span></div>
 
   </div>
 </template>
