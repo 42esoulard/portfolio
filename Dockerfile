@@ -1,7 +1,7 @@
-FROM node:lts-alpine
-
+FROM node:lts
 
 ENV CHOKIDAR_USEPOLLING=true
+ENV NODE_ENV=development
 
 # installe un simple serveur http pour servir un contenu statique
 # RUN npm install -g http-server
@@ -22,5 +22,5 @@ COPY . .
 # construit l'app pour la production en la minifiant
 # RUN npm run serve
 
-# EXPOSE 8080
+EXPOSE 8080
 # CMD ["npm", "run", "serve"]

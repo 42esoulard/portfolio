@@ -1,0 +1,116 @@
+@import "./variables";
+
+@mixin neon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $neon-box-shadow-green;
+    border-radius: 1.5rem;
+    animation: border-flicker 2s linear;
+}
+
+@mixin neon-text {
+    font-family: $font-title-double;
+    color:#d8fffa;
+    text-shadow: $neon-text-shadow-green;
+}
+
+@mixin neon-text-animated {
+    @include neon-text;
+    animation: text-flicker 3s linear;
+    &--offset {
+        animation: letter-flicker 2s linear 3;
+    }
+}
+
+@keyframes text-flicker {
+    0% {
+      opacity:0.1;
+    }
+    2% {
+      opacity:1;
+    }
+    8% {
+      opacity:0.1;
+    }
+    9% {
+      opacity:1;
+    }
+    12% {
+      opacity:0.1;
+    }
+    20% {
+      opacity:1;
+    }
+    25% {
+      opacity:0.3;
+    }
+    30% {
+      opacity:1;
+    }
+    70% {
+      opacity:0.7;
+    }
+    72% {
+      opacity:0.2;
+    }
+    77% {
+      opacity:.9;
+    }
+    100% {
+      opacity:.9;
+    }
+}
+  
+  @keyframes border-flicker {
+    0% {
+      opacity:0.1;
+    }
+    2% {
+      opacity:1;
+    }
+    4% {
+      opacity:0.1;
+    }
+    
+    8% {
+      opacity:1;
+    }
+    70% {
+      opacity:0.7;
+    }
+    100% {
+      opacity:1;
+    }
+}
+  
+  @keyframes letter-flicker {
+    0% {
+      opacity:0.1;
+    }
+    2% {
+      opacity:0.1;
+    }
+    4% {
+      opacity:1;
+    }
+    19% {
+      opacity:1;
+    }
+    21% {
+      opacity:0.1;
+    }
+    23% {
+      opacity:1;
+    }
+    80% {
+      opacity:1;
+    }
+    83% {
+      opacity:0.4;
+    }
+    87% {
+      opacity:1;
+    }
+}

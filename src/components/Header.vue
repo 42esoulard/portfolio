@@ -1,10 +1,10 @@
 <template>
   <div class="nav-container">
     <nav class="nav">
-      <router-link :to="{ name: 'Home'}">Home</router-link> | 
-      <router-link :to="{ name: 'About'}">About</router-link> | 
-      <router-link :to="{ name: 'Work'}">Work</router-link> | 
-      <router-link :to="{ name: 'Contact'}">Contact</router-link>
+      <router-link class="[ nav-link" :to="{ name: 'Home'}">HOME</router-link> | 
+      <router-link class="nav-link" :to="{ name: 'About'}">ABOUT</router-link> | 
+      <router-link class="nav-link" :to="{ name: 'Work'}">WORK</router-link> | 
+      <router-link class="nav-link" :to="{ name: 'Contact'}">CONTACT</router-link>
     </nav>
   </div>
 </template>
