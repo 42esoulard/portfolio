@@ -1,6 +1,5 @@
 <template>
 <div class="contact">
-  <div class="contact-neon-wrapper">
   <h1 class="contact-title">Contact me</h1>
 
   <form class="contact-form" @submit.prevent="sendMessage()">
@@ -14,7 +13,6 @@
       <div class="contact-btn-neon-text" @click="sendMessage()">Send</div>
     </div>
   </form>
-  </div>
 </div>
 </template>
  
@@ -53,6 +51,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+  @import "../sass/main.scss";
 </style>

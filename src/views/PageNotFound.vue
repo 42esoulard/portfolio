@@ -4,3 +4,7 @@
     <p>This page no longer exists or was moved to another location.</p>
   </div>
 </template>
+
+<style lang="scss">
+  @import "../sass/main.scss";
+</style>
