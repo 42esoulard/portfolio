@@ -3,50 +3,58 @@
     <div class="about-neon-wrapper">
       <h1 class="about-title">About me</h1>
 
-      I am
-      27yo - Paris, France - 42 student
-
-      I'm looking for 
-      A software or fullstack dev internship (in Paris or remote)
-
-      I'm good at
-      Autonomy, teamwork, self-discipline, organization, self-teaching
-
-      I love
-      Creating, coding, music, growth, neon signs
-
-      My stack:
-
-
-      <p>I'm a 27 years old developer currently based in Paris, France.</p>
-      <p>
-        I recently graduated from 42Paris' common core curriculum and I am now 
-        looking for an internship as a software or fullstack developer.
-      </p>
-      <p>
-        I joined 42 back in 2019 as a complete coding beginner.
-        In the past two years, I have studied a wide range of technologies, and I have acquired
-        an ever-growing thirst for self-teaching! 
-      </p>
-      <p>
-        I am now familiar with C and C++, algorithm building, fullstack web development,
-        app containerization, server mechanics, computer science and networks theory, 
-        and security notions.
-      </p>
-      <p>
-        42's peer-learning pedagogy allowed me to acquire great teamwork experience, as well as 
-        rigorous self-discipline, and a knack for organization. Because of the health crisis, 
-        I got to experiment with remote work for most of 2020, and I learnt to be flexible and 
-        to provide structure to my work - and my life - independently.
-      </p>
-      <p>
-        I have always been a creator at heart, and coding is now one of the creative mediums I 
-        affectionate the most. Another one very dear to my heart is music: I have been a musician
-        for my whole life, and I am currently self-teaching drums playing.
-      </p>
-      <p>
-        Also I enjoy a good neon sign.
-      </p>
+      <div v-if="short">
+        <p>
+          <span class="about-short-subtitle">I am</span>
+          27yo - Paris, France - 42 student
+        </p>
+        <p>
+          <span class="about-short-subtitle">I'm looking for</span>
+          A software or fullstack dev internship (in Paris or remote)
+        </p>
+        <p>
+          <span class="about-short-subtitle">I'm good at</span>
+          Autonomy, teamwork, self-discipline, organization, self-teaching
+        </p>
+        <p>
+          <span class="about-short-subtitle">I love</span>
+          Creating, coding, music, growth, neon signs
+        </p>
+      </div>
+      
+      <div v-else>
+        <p>I am a <span class="about-highlight">27 years old</span> developer currently based in <span class="about-highlight">Paris, France</span>.</p>
+        <p>
+          I recently graduated from <span class="about-highlight">42Paris</span>' common core curriculum and I am 
+          looking for <span class="about-highlight">an internship as a software or fullstack developer</span>.
+        </p>
+        <p>
+          I joined 42 back in 2019 as a complete coding beginner.
+          In the past two years, I have studied a wide range of technologies, and I have acquired
+          an ever-growing thirst for <span class="about-highlight">self-teaching</span>! 
+        </p>
+        <p>
+          42's peer-learning pedagogy allowed me to acquire great <span class="about-highlight">teamwork</span> experience, as well as 
+          rigorous <span class="about-highlight">self-discipline</span>, and a knack for <span class="about-highlight">organization</span>. 
+          Because of the health crisis, I got to experiment with remote work for most of 2020: I learnt to be <span class="about-highlight">independent</span> and 
+          to provide structure to my work - and my life - with <span class="about-highlight">flexibility</span>.
+        </p>
+        <p>
+          I am now familiar with C and C++, algorithm building, fullstack web development,
+          app containerization, server mechanics, computer science and networks theory, 
+          and security notions.
+        </p>
+        <p>
+          I have always been a <span class="about-highlight">creator at heart</span>, and coding is now one of the creative mediums I 
+          affectionate the most. Another one very dear to my heart is music: I have been a <span class="about-highlight">musician</span> for as long as I can remember, 
+          and I am currently self-teaching drums playing.
+        </p>
+        <p>
+          Also I enjoy a good neon sign.
+        </p>
+      </div>
+      <button v-if="short" @click="toggleLength()">INSERT COOL LONGER SYMBOL HERE</button>
+      <button v-else @click="toggleLength()">INSERT COOL SHORTER SYMBOL HERE</button>
       <div>
         Here is my stack:
         <p>
@@ -71,3 +79,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  setup(){
+    const short = ref(true);
+    return {
+      short,
+    }
+  }
+}
+</script>
