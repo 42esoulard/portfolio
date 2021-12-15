@@ -1,8 +1,10 @@
 // COLORS
-$color-eggplant: #6F5060;
+$color-green: #72e9cb; 
+$color-purple: #9257f2;
 $color-yellow: #F1D302;
-$color-pale-blue: #90BAAD;
-$color-pale-pink: #C9ADA7;
+$color-light: #e8fff9; 
+// $color-pale-blue: #90BAAD;
+// $color-pale-pink: #C9ADA7;
 $color-dark: #0C1713;
 
 $neon-box-shadow-green:
@@ -21,11 +23,20 @@ $neon-text-shadow-green:
     .1rem 0rem   5rem #0be59c, .2rem 0rem  20rem #0be5a4, .4rem 0rem  10rem #0be5ae,
     .1rem 0rem  10rem #0be59c, .2rem 0rem  30rem #0be5c1, .4rem 0rem  10rem #0be5b6;  
 
+$neon-text-shadow-purple: 
+    .1rem 0rem .25rem #ead8ff, .2rem 0rem .25rem #e6d8ff, .4rem 0rem .25rem #ead8ff, 
+    .1rem 0rem   0rem #9257f2, .2rem 0rem   0rem #9a57f2, .4rem 0rem   0rem #9f57f2,
+    .1rem 0rem  .1rem #7957f2, .2rem 0rem  .1rem #9a57f2, .4rem 0rem  .1rem #8d57f2,
+    .1rem 0rem   2rem #8057f2, .2rem 0rem   2rem #9f57f2, .4rem 0rem   2rem #9257f2, 
+    .1rem 0rem   1rem #450be5, .2rem 0rem   1rem #1a0be5, .4rem 0rem   5rem #830be5, 
+    .1rem 0rem   5rem #1a0be5, .2rem 0rem  20rem #1a0be5, .4rem 0rem  10rem #1a0be5,
+    .1rem 0rem  10rem #330be5, .2rem 0rem  30rem #4c0be5, .4rem 0rem  10rem #330be5;
+
 $neon-text-shadow-black: #00000000
-    // .1vw 0vw .25vw #bdbdbd, .2vw 0vw .25vw #d8fff8, .4vw 0vw .25vw #d8fff8, 
-    // .1vw 0vw   0vw #999999, .2vw 0vw   0vw #57f2d0, .4vw 0vw   0vw #57f2cb,
-    // .1vw 0vw  .1vw #4d4d4d, .2vw 0vw  .1vw #57f2dd, .4vw 0vw  .1vw #57f2c4,
-    // .1vw 0vw   2vw #272727, .2vw 0vw   2vw #57f2d0, .4vw 0vw   2vw #57f2d0, 
-    // .1vw 0vw   1vw #161616, .2vw 0vw   1vw #0be5b6, .4vw 0vw   5vw #0be5ae, 
-    // .1vw 0vw   5vw #0a0a0a, .2vw 0vw  20vw #0be5a4, .4vw 0vw  10vw #0be5ae,
-    // .1vw 0vw  10vw #000000, .2vw 0vw  30vw #0be5c1, .4vw 0vw  10vw #0be5b6;  
+    // .1rem 0rem .25rem #bdbdbd, .2rem 0rem .25rem #d8fff8, .4rem 0rem .25rem #d8fff8, 
+    // .1rem 0rem   0rem #999999, .2rem 0rem   0rem #57f2d0, .4rem 0rem   0rem #57f2cb,
+    // .1rem 0rem  .1rem #4d4d4d, .2rem 0rem  .1rem #57f2dd, .4rem 0rem  .1rem #57f2c4,
+    // .1rem 0rem   2rem #272727, .2rem 0rem   2rem #57f2d0, .4rem 0rem   2rem #57f2d0, 
+    // .1rem 0rem   1rem #161616, .2rem 0rem   1rem #0be5b6, .4rem 0rem   5rem #0be5ae, 
+    // .1rem 0rem   5rem #0a0a0a, .2rem 0rem  20rem #0be5a4, .4rem 0rem  10rem #0be5ae,
+    // .1rem 0rem  10rem #000000, .2rem 0rem  30rem #0be5c1, .4rem 0rem  10rem #0be5b6;  

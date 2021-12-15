@@ -55,12 +55,12 @@ html, body, div#app {
 }
 
 .content-container {
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
 }
 
 .home {
@@ -100,6 +100,8 @@ html, body, div#app {
         padding:0;
     }
     &:hover {
+        color:#ffd8d8;
+        text-shadow: $neon-text-shadow-purple;
         animation: letter-flicker 2s linear 3;
     }
 }
@@ -118,6 +120,8 @@ html, body, div#app {
         font-size: 4rem;
         &:hover {
             animation: letter-flicker 2s linear 3;
+            color:#edd8ff;
+            text-shadow: $neon-text-shadow-purple;
         }
     }
     &--neon {
@@ -129,4 +133,26 @@ html, body, div#app {
     //     margin-left: 0px;
     // }
     font-size: 2rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    max-width: 600px;
+    min-width: 400px;
+    font-family: $font-nerd;
+    font-size: 1rem;
+    color: $color-light;
+}
+
+.about-neon-wrapper {
+    // @include neon-wrapper;
+    // padding: 30px;
+}
+
+.about-title {
+    @include neon-text-animated;
+    font-size: 3rem;
 }
