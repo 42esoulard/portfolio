@@ -1,18 +1,26 @@
 <template>
+<div class="contact">
+  <div class="contact-neon-wrapper">
   <h1 class="contact-title">Contact me</h1>
 
-  <form @submit.prevent="sendMessage()">
-    <label for="name">Your name:</label>
-    <input name="name" minlength="2" maxlength="100"  v-model="name">
-    <label for="email">Your email address:</label>
-    <input name="email" type="email" minlength="2" maxlength="100" v-model="email">
-    <label for="message">Your message:</label>
-    <input name="message" minlength="2" maxlength="100000" v-model="message">
-    <button type="submit">Send it my way!</button>
+  <form class="contact-form" @submit.prevent="sendMessage()">
+    <label class="contact-label" for="name"><span class="about-line">-----</span>NAME<span class="about-line">-----</span></label>
+    <input class="contact-input" name="name" minlength="2" maxlength="100"  v-model="name">
+    <label class="contact-label" for="email"><span class="about-line">-----</span>EMAIL<span class="about-line">-----</span></label>
+    <input class="contact-input" name="email" type="email" minlength="2" maxlength="100" v-model="email">
+    <label class="contact-label" for="message"><span class="about-line">-----</span>MESSAGE<span class="about-line">-----</span></label>
+    <textarea class="contact-input contact-input--message" name="message" minlength="2" maxlength="100000" v-model="message"></textarea>
+    <div class="contact-btn-neon-wrapper">
+      <div class="contact-btn-neon-text" @click="sendMessage()">Send</div>
+    </div>
   </form>
+  </div>
+</div>
 </template>
  
 <script>
+import { ref } from "vue";
+
 export default {
   setup() {
     const name = ref("");
@@ -21,7 +29,7 @@ export default {
     const wasSubmitted = ref(false);
 
     const sendMessage = () => {
-      if (wasSubmitted) {
+      if (wasSubmitted.value) {
         return;
       }
       wasSubmitted.value = true;
@@ -29,13 +37,17 @@ export default {
       // insert awesome mailing function
       // followed by confirmation modal
 
-      name = "";
-      email = "";
-      message = "";
+      name.value = "";
+      email.value = "";
+      message.value = "";
     }
 
     return {
+      name,
+      email,
+      message,
       sendMessage,
+
     }
   }
 }

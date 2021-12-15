@@ -1,28 +1,28 @@
 <template>
   <div class='about'>
-    <div class="about-neon-wrapper">
-      <h1 class="about-title">About me</h1>
+    <h1 class="about-title">About me</h1>
 
-      <div v-if="short">
-        <p>
-          <span class="about-short-subtitle">I am</span>
-          27yo - Paris, France - 42 student
-        </p>
-        <p>
-          <span class="about-short-subtitle">I'm looking for</span>
-          A software or fullstack dev internship (in Paris or remote)
-        </p>
-        <p>
-          <span class="about-short-subtitle">I'm good at</span>
-          Autonomy, teamwork, self-discipline, organization, self-teaching
-        </p>
-        <p>
-          <span class="about-short-subtitle">I love</span>
-          Creating, coding, music, growth, neon signs
-        </p>
+    <div v-if="short" class="about-text">
+      <div>
+        <span class="about-short-subtitle"><div class="about-line">------------</div>I AM <div class="about-line">------------</div></span>
+        <p>27yo - Paris, France - 42 student</p>
       </div>
-      
-      <div v-else>
+      <div>
+        <span class="about-short-subtitle"><div class="about-line">------------</div>I'M LOOKING FOR<div class="about-line">-----------</div></span>
+        <p>A software or fullstack dev internship <br> (Paris or remote)</p>
+      </div>
+      <div>
+        <span class="about-short-subtitle"><div class="about-line">-----------------</div>I'M GOOD AT<div class="about-line">-----------------</div></span>
+        <p>Autonomy, self-discipline, teamwork,<br>organization, self-teaching</p>
+      </div>
+      <div>
+        <span class="about-short-subtitle"><div class="about-line">---------------</div>I LOVE<div class="about-line">----------------</div></span>
+        <p>Creating, coding, music, <br> growth, neon signs</p>
+      </div>
+    </div>
+    
+    <div v-else class="about-text about-long">
+      <div class="about-column">
         <p>I am a <span class="about-highlight">27 years old</span> developer currently based in <span class="about-highlight">Paris, France</span>.</p>
         <p>
           I recently graduated from <span class="about-highlight">42Paris</span>' common core curriculum and I am 
@@ -36,9 +36,14 @@
         <p>
           42's peer-learning pedagogy allowed me to acquire great <span class="about-highlight">teamwork</span> experience, as well as 
           rigorous <span class="about-highlight">self-discipline</span>, and a knack for <span class="about-highlight">organization</span>. 
+        </p>  
+        </div>
+        <div class="about-column">  
+        <p>
           Because of the health crisis, I got to experiment with remote work for most of 2020: I learnt to be <span class="about-highlight">independent</span> and 
           to provide structure to my work - and my life - with <span class="about-highlight">flexibility</span>.
         </p>
+      
         <p>
           I am now familiar with C and C++, algorithm building, fullstack web development,
           app containerization, server mechanics, computer science and networks theory, 
@@ -53,39 +58,46 @@
           Also I enjoy a good neon sign.
         </p>
       </div>
-      <button v-if="short" @click="toggleLength()">INSERT COOL LONGER SYMBOL HERE</button>
-      <button v-else @click="toggleLength()">INSERT COOL SHORTER SYMBOL HERE</button>
-      <div>
-        Here is my stack:
-        <p>
-          <a href='https://ubuntu.com/desktop/developers'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" title='Ubuntu' width=50/></a>
-          <a href='https://git-scm.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title='Git' width=50/></a>
-          <a href='https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title='C' width=50/></a>
-          <a href='http://www.cplusplus.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title='C++' width=50/></a>
-          <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" title='HTML5' width=50/></a>
-          <a href='https://cssreference.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" title='CSS3' width=50/></a>
-          <a href='https://sass-lang.com/documentation'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" title='Sass' width=50/></a><br>
-          <a href='https://javascript.info/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title='JavaScript' width=50/></a>
-          <a href='https://www.typescriptlang.org/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" title='TypeScript' width=50/></a>
-          <a href='https://v3.vuejs.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" title='VueJS' width=50/></a>
-          <a href='https://docs.nestjs.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" title='NestJS' width=50/></a>
-          <a href='https://webpack.js.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" title='Webpack' width=50/></a>
-          <a href='https://www.postgresql.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title='PostgreSQL' width=50/></a>
-          <a href='http://nginx.org/en/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width=50/></a>
-          <a href='https://www.docker.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" title='Docker' width=50/></a>
-          <a href='https://kubernetes.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" title='Kubernetes' width=50/></a>
-        </p>
-      </div>
     </div>
+
+    <span class="about-short-subtitle"><div class="about-line">---------</div>MY STACK<div class="about-line">---------</div></span>
+    <p class="about-stack-icons">
+      <a href='https://ubuntu.com/desktop/developers'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" title='Ubuntu' width=50/></a>
+      <a href='https://git-scm.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title='Git' width=50/></a>
+      <a href='https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title='C' width=50/></a>
+      <a href='http://www.cplusplus.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title='C++' width=50/></a>
+      <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" title='HTML5' width=50/></a>
+      <a href='https://cssreference.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" title='CSS3' width=50/></a>
+      <a href='https://sass-lang.com/documentation'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" title='Sass' width=50/></a>
+      <a href='https://javascript.info/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title='JavaScript' width=50/></a>
+      <a href='https://www.typescriptlang.org/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" title='TypeScript' width=50/></a>
+      <a href='https://v3.vuejs.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" title='VueJS' width=50/></a>
+      <a href='https://docs.nestjs.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" title='NestJS' width=50/></a>
+      <a href='https://webpack.js.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" title='Webpack' width=50/></a>
+      <a href='https://www.postgresql.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title='PostgreSQL' width=50/></a>
+      <a href='http://nginx.org/en/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width=50/></a>
+      <a href='https://www.docker.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" title='Docker' width=50/></a>
+      <a href='https://kubernetes.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" title='Kubernetes' width=50/></a>
+    </p>
+    <div v-if="short" @click="toggleLength()" title="More"><i class="fa fa-chevron-down fa-3x about-more-icon"></i></div>
+    <div v-else @click="toggleLength()" title="Less"><i class="fa fa-chevron-up fa-3x about-more-icon"></i></div>
   </div>
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   setup(){
     const short = ref(true);
+
+    const toggleLength = () => {
+      short.value = !short.value;
+    }
+
     return {
       short,
+      toggleLength,
     }
   }
 }

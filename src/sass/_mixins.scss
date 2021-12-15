@@ -15,6 +15,11 @@
     text-shadow: $neon-text-shadow-green;
 }
 
+@mixin light-neon-text {
+  color:#d8fffa;
+  text-shadow: $light-neon-text-shadow-green;
+}
+
 @mixin neon-text-animated {
     @include neon-text;
     animation: text-flicker 3s linear;
