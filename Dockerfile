@@ -20,7 +20,7 @@ RUN npm install
 COPY . .
 
 # construit l'app pour la production en la minifiant
-# RUN npm run serve
+# RUN npm run build
 
 EXPOSE 8080
 # CMD ["npm", "run", "serve"]
