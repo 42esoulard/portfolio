@@ -2,14 +2,14 @@
   <div class='about'>
     <h1 class="about-title">About me</h1>
 
-    <div v-if="short" class="about-text">
+    <div v-if="short" class="about-text about-short">
       <div>
         <span class="about-short-subtitle"><div class="about-line">------------</div>I AM <div class="about-line">------------</div></span>
         <p>27yo - Paris, France - 42 student</p>
       </div>
       <div>
         <span class="about-short-subtitle"><div class="about-line">------------</div>I'M LOOKING FOR<div class="about-line">-----------</div></span>
-        <p>A software or fullstack dev internship <br> (Paris or remote)</p>
+        <p>A first job as a software or fullstack dev <br> (Paris or remote)</p>
       </div>
       <div>
         <span class="about-short-subtitle"><div class="about-line">-----------------</div>I'M GOOD AT<div class="about-line">-----------------</div></span>
@@ -26,7 +26,7 @@
         <p>I am a <span class="about-highlight">27 years old</span> developer currently based in <span class="about-highlight">Paris, France</span>.</p>
         <p>
           I recently graduated from <span class="about-highlight">42Paris</span>' common core curriculum and I am 
-          looking for <span class="about-highlight">an internship as a software or fullstack developer</span>.
+          looking for <span class="about-highlight">a first job as a software or fullstack developer</span>.
         </p>
         <p>
           I joined 42 back in 2019 as a complete coding beginner.

@@ -79,6 +79,8 @@ html, body, div#app {
 
 .home-neon-wrapper {
     @include neon-wrapper;
+    display: flex;
+    justify-content: center;
 }
 
 .home-neon-pretext {
@@ -167,6 +169,7 @@ html, body, div#app {
         color:#edd8ff;
         text-shadow: $neon-text-shadow-purple;
     }
+    margin-bottom: 100px;
 }
 
 .about-short-subtitle {
@@ -177,6 +180,10 @@ html, body, div#app {
         font-size: 1.5rem;
     }
 
+}
+
+.about-short {
+    text-align: center;
 }
 
 .about-line {

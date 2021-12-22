@@ -2,6 +2,9 @@
 - add github link
 - make functional contact page
 - add captcha to contact page
-- limit subpages neon flicker
+- build carousel:
+  - add images (gifs?)
+  - add transitions on slide
+X limit subpages neon flicker
 - add transitions to pages switch (fade from black)
 - nav bar?
