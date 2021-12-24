@@ -24,7 +24,6 @@
       "src/**/*.vue",
       "tests/**/*.ts",
       "tests/**/*.tsx",
-      "src/composables/draw.ts"
     ],
     "exclude": ["node_modules"],
     "strictPropertyInitialization": false
