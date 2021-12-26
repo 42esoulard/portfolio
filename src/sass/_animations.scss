@@ -46,3 +46,29 @@
     transform: translateX(0);
   }
 }
+
+@keyframes rollFromTop {
+  from {
+    opacity: 0;
+    color: transparent;
+    line-height: 0;
+  }
+  to {
+    opacity: 1;
+    color: $color-light;
+    line-height: 1;
+  }
+}
+
+@keyframes rollToTop {
+  from {
+    opacity: 1;
+    color: $color-light;
+    line-height: 1;
+  }
+  to {
+    opacity: 0;
+    color: transparent;
+    line-height: 0;
+  }
+}

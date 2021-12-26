@@ -16,12 +16,20 @@ $neon-box-shadow-green:
     inset 0 0 0.5rem  0.2rem #f7fffc;
 
 $neon-box-shadow-purple:
-    0 0 0.1rem  0.2rem #fcf7ff,   
-    0 0 0.4rem  0.6rem #dcc5ec9d, 
-    0 0   4rem  0.4rem #dcafe65d,
+    0 0 0rem  0rem #00000052,   
+    0 0 0.4rem  0.6rem #dcc5ec44, 
+    0 0   4rem  0.4rem #dcafe62f,
     inset 0 0 1.5rem  0.4rem #d1c1e628,
-    inset 0 0 0.4rem  0.2rem #d0b3db8a,
-    inset 0 0 0.1rem  0.2rem #fcf7ff;
+    inset 0 0 0.4rem  0.2rem #d0b3db44,
+    inset 0 0 0rem  0rem #000000;
+
+$neon-box-shadow-black:
+    0 0 0.6rem  0.3rem #0000003b,   
+    0 0 0.4rem  0.6rem #0000002a, 
+    0 0   4rem  2.4rem #0b090c2f,
+    inset 0 0 1.5rem  0.4rem #05040528,
+    inset 0 0 0.4rem  0.9rem #07050744,
+    inset 0 0 0.8rem  1.5rem #00000054;
 
 $neon-text-shadow-green: 
     .1rem 0rem .25rem #d8fff5, .2rem 0rem .25rem #d8fff8, .4rem 0rem .25rem #d8fff8, 

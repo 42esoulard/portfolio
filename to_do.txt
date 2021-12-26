@@ -7,6 +7,7 @@ X switch to ts => solve weird scss webpack issue
   X add transitions on slide
   X add proper links + hover
   - dots css
+  - add stack
 X limit subpages neon flicker
 X add transitions to pages switch (fade from black)
 - add transition to about short/long version + clearer switch btn

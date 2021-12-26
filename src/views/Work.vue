@@ -1,7 +1,6 @@
 <template>
   <div class="work">
     <div class="work-title">Past projects</div>
-
     <div class='work-dots'>
       <span v-for="item in content" :key="item.id" :class="[
             'work-dot',

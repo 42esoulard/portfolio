@@ -2,6 +2,13 @@
   <div class='about'>
     <h1 class="about-title">About me</h1>
 
+    <div class="about-btn-container">
+      <button :class="['about-btn',
+        short ? 'about-btn--active' : '']" @click="toggleLength('short')">Short version</button>
+      <button :class="['about-btn',
+        short ? '' : 'about-btn--active']" @click="toggleLength('long')">Long version</button>
+    </div>
+
     <div v-if="short" class="about-text about-short">
       <div>
         <span class="about-short-subtitle"><div class="about-line">------------</div>I AM <div class="about-line">------------</div></span>
@@ -79,8 +86,8 @@
       <a href='https://www.docker.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" title='Docker' width=50/></a>
       <a href='https://kubernetes.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" title='Kubernetes' width=50/></a>
     </p>
-    <div v-if="short" @click="toggleLength()" title="More"><i class="fa fa-chevron-down fa-3x about-more-icon"></i></div>
-    <div v-else @click="toggleLength()" title="Less"><i class="fa fa-chevron-up fa-3x about-more-icon"></i></div>
+    <div v-if="short" @click="toggleLength('long')" title="More"><i class="fa fa-chevron-down fa-3x about-more-icon"></i></div>
+    <div v-else @click="toggleLength('short')" title="Less"><i class="fa fa-chevron-up fa-3x about-more-icon"></i></div>
   </div>
 </template>
 
@@ -91,8 +98,13 @@ export default {
   setup(){
     const short = ref(true);
 
-    const toggleLength = () => {
-      short.value = !short.value;
+    const toggleLength = (length: string) => {
+      if (length == 'long') {
+        short.value = false;
+      } else if (length == 'short') {
+        short.value = true;
+      }
+      
     }
 
     return {
