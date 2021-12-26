@@ -12,21 +12,36 @@
     <div class="work-carousel-wrapper">
       <div class='work-slide-btn work-slide-btn--prev' id='prev' title='Previous' @click="prevSlide()">&#10094;</div>
       <div class="work-carousel-content-wrapper">
-        <img v-for="item in content" :key='item.id' :src="getImgUrl(item.img)" :class="[
-            'work-slide-img',
-            currentSlide === item.id ? 'work-slide-img--active' : 'work-slide-img--inactive',
-          ]" :title="item.title"/>
+        <div v-for="item in content" :key='item.id' :class="[
+              'work-slide-img-wrapper',
+              currentSlide === item.id ? 'work-slide-img-wrapper--active' : '',
+            ]">
+          <img :src="getImgUrl(item.img)" class="work-slide-img" :title="item.title"/>
+          <a target="_blank" :href="item.github" class="work-slide-img-link">
+            <img
+              :src="getImgUrl('github-light.png')"
+            />see on github
+          </a>
+        </div>
 
         <div class="work-slide-content">
-          <div class="work-slide-title"> {{ currentContent.title }} </div>
+          <div class="work-line">-----------------------------------------------</div>
+          <div v-if="currentContent.link" class="work-slide-title"><a class="work-slide-title" :href="currentContent.link"> {{ currentContent.title }} </a></div>
+          <div v-else class="work-slide-title"><a class="work-slide-title" :href="currentContent.github"> {{ currentContent.title }} </a></div>
+          <!-- <div class="work-line">-------------------</div> -->
           <div class="work-slide-description"> {{ currentContent.description }} </div>
           <div class="work-slide-links">
-            <div v-if="currentContent.link" class="work-slide-link">
-              <a href="currentContent.link"><img src="" class="work-slide-icon" title="currentContent.link" /> Visit website </a>
-            </div>
-            <div class="work-slide-link"> 
-              <a href="currentContent.gh"><img src="" class="work-slide-icon" title="GitHub" /> See on Github</a>
-            </div>
+            <!-- <div v-if="currentContent.link" class="work-slide-link"> -->
+            <!-- </div> -->
+            <!-- <div class="work-slide-link">  -->
+              <a target="_blank" class="work-slide-link" :href="currentContent.github">
+                <img class="work-slide-icon"
+                  :src="getImgUrl('github-light.png')"
+                />See on github
+              </a>
+              <a v-if="currentContent.link" class="work-slide-link" :href="currentContent.link" >Visit website </a>
+
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -145,7 +160,7 @@ export default {
         id: 1,
         title: "ft_transcendence [2021]",
         img: "ft_transcendence.gif",
-        description: "A fully responsive online multiplayer pong platform, with a functional chat, live view, social features, 42 API authentication, 2FA, and website admin privileges. Group project - I worked not only but mainly on the chat features. Developed with docker-compose.",
+        description: "A fully responsive online multiplayer pong platform, with a functional chat, live view, social features, 42 API authentication, 2FA, and website admin privileges. Group project, developed with docker-compose.",
         tech: [
           techIcons.vue,
           techIcons.ts,
@@ -217,7 +232,7 @@ export default {
           return;
         carousel.setAttribute("style", "")
         carousel.setAttribute("style", "animation: rightSlideIn 1s ease forwards");
-      }, 20)
+      }, 300)
     }
 
     const prevSlide = () => {
@@ -231,7 +246,7 @@ export default {
           return;
         carousel.setAttribute("style", "")
         carousel.setAttribute("style", "animation: leftSlideIn 1s ease forwards");
-      }, 20)
+      }, 300)
     }
 
     const dotSlide = (index: number) => {
