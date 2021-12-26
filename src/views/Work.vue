@@ -1,6 +1,14 @@
 <template>
   <div class="work">
     <div class="work-title">Past projects</div>
+
+    <div class='work-dots'>
+      <span v-for="item in content" :key="item.id" :class="[
+            'work-dot',
+            active = (currentSlide === item.id),
+          ]" @click="dotSlide(item.id)"></span>
+    </div>
+
     <div class="work-carousel-wrapper">
       <div class='work-slide-btn work-slide-btn--prev' id='prev' title='Previous' @click="prevSlide()">&#10094;</div>
       <div class="work-carousel-content-wrapper">
@@ -23,41 +31,17 @@
         </div>
       </div>
       <div class='work-slide-btn work-slide-btn--next' id='next' title='Next' @click="nextSlide()">&#10095;</div>
-
     </div>
 
-    <div class='work-dots'>
-      <span :class="[
-            'work-dot',
-            active = (currentSlide === 0),
-          ]" @click="showSlide(0)"></span>
-      <span :class="[
-            'work-dot',
-            active = (currentSlide === 1),
-          ]" @click="showSlide(1)"></span>
-      <span :class="[
-            'work-dot',
-            active = (currentSlide === 2),
-          ]" @click="showSlide(2)"></span>
-      <span :class="[
-            'work-dot',
-            active = (currentSlide === 3),
-          ]" @click="showSlide(3)"></span>
-      <span :class="[
-            'work-dot',
-            active = (currentSlide === 4),
-          ]" @click="showSlide(4)"></span>
-    </div>
   </div>
 </template>
 
-<script>
-import { ref } from 'vue';
+<script lang='ts'>
+import { onMounted, ref } from 'vue';
 
 export default {
     setup() {
     const SLIDES_NB = 5;
-    const TIMEOUT = 80000000;
       // <a href='https://ubuntu.com/desktop/developers'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" title='Ubuntu' width=50/></a>
       // <a href='https://git-scm.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title='Git' width=50/></a>
       // <a href='https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title='C' width=50/></a>
@@ -137,15 +121,13 @@ export default {
       },
     }
 
-    const getImgUrl = (name) => {
+    const getImgUrl = (name: string) => {
       return require(`../assets/${name}`);
     }
 
-    let currentSlide = ref(0);
-    let timeout;
-
     const content = [
       {
+        id: 0,
         title: "This website [2021]",
         img: "portfolio.png",
         description: "My introduction portfolio. A responsive single-page application built from an Alpine Docker container. Complete with neon lights.",
@@ -160,6 +142,7 @@ export default {
         github: "https://github.com/42esoulard/portfolio",
       },
       {
+        id: 1,
         title: "ft_transcendence [2021]",
         img: "ft_transcendence.gif",
         description: "A fully responsive online multiplayer pong platform, with a functional chat, live view, social features, 42 API authentication, 2FA, and website admin privileges. Group project - I worked not only but mainly on the chat features. Developed with docker-compose.",
@@ -177,6 +160,7 @@ export default {
         github: "https://github.com/42esoulard/42_ft_transcendence",
       },
       {
+        id: 2,
         title: "webserv [2021]",
         img: "webserv.png",
         description: "An HTTP 1.1 server in C++ 98, according to RFC and based on Nginx (GET, POST, DELETE, PUT methods). Includes requests handling, response building and file serving, customisable server configuration (inspired by NginX's config file), and CGI execution.",
@@ -187,6 +171,7 @@ export default {
         github: "https://github.com/42esoulard/42_webserv",
       },
       {
+        id: 3,
         title: "The Weather Sloth [2021]",
         img: "sloth.png",
         description: "A responsive app exercise with OpenWeatherAPI and GiphyAPI. For refined passionates of both weather forecasts and glorious sloths.",
@@ -199,6 +184,7 @@ export default {
         github: "https://github.com/42esoulard/weather_sloth",
       },
       {
+        id: 4,
         title: "miniRT [2020]",
         img: "minirt.png",
         description: "A multi-threaded raytracer in C. Rendering computer-generated-images from a parsed configuration file, implementing geometry formulas.",
@@ -210,27 +196,57 @@ export default {
       },
     ];
 
-    let index = -1;
+    let currentContent = ref(content[0]);
+    let currentSlide = ref(0);
+    let carousel: Element | null;
 
-    content.forEach(item => {
-      item.id = ++index;
+    onMounted(() => {
+      carousel = document.querySelector(".work-carousel-content-wrapper");
     })
 
-    let currentContent = ref(content[0]);
-
+    
     const nextSlide = () => {
-      clearTimeout(timeout);
-      showSlide(currentSlide.value + 1);
+      
+      if (!carousel)
+        return;
+      carousel.setAttribute("style", "")
+      carousel.setAttribute("style", "animation: rightSlideOut 1s ease forwards");
+      setTimeout(() => {
+        showSlide(currentSlide.value + 1);
+        if (!carousel)
+          return;
+        carousel.setAttribute("style", "")
+        carousel.setAttribute("style", "animation: rightSlideIn 1s ease forwards");
+      }, 20)
     }
 
     const prevSlide = () => {
-      clearTimeout(timeout);
-      showSlide(currentSlide.value - 1);
+      if (!carousel)
+        return;
+      carousel.setAttribute("style", "")
+      carousel.setAttribute("style", "animation: leftSlideOut 1s ease forwards");
+      setTimeout(() => {
+        showSlide(currentSlide.value - 1);
+        if (!carousel)
+          return;
+        carousel.setAttribute("style", "")
+        carousel.setAttribute("style", "animation: leftSlideIn 1s ease forwards");
+      }, 20)
     }
 
-    const showSlide = (index) => {
-      clearTimeout(timeout);
-      
+    const dotSlide = (index: number) => {
+      if (index < currentSlide.value) {
+        while (currentSlide.value < index) {
+          nextSlide();
+        }
+      } else {
+        while (currentSlide.value > index) {
+          prevSlide();
+        }
+      }
+    }
+
+    const showSlide = (index: number) => {      
       currentSlide.value = index;
       if (currentSlide.value >= SLIDES_NB)
         currentSlide.value = 0;
@@ -238,7 +254,6 @@ export default {
         currentSlide.value = SLIDES_NB - 1;
       
       currentContent.value = content[currentSlide.value];
-      timeout = setTimeout(nextSlide, TIMEOUT);
     }
 
     return {
@@ -246,6 +261,7 @@ export default {
       getImgUrl,
       nextSlide,
       prevSlide,
+      dotSlide,
       currentContent,
       currentSlide,
     }

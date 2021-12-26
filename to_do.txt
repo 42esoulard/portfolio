@@ -1,10 +1,12 @@
-- switch to ts => solve weird scss webpack issue
+X switch to ts => solve weird scss webpack issue
 - add github link
 - make functional contact page
 - add captcha to contact page
 - build carousel:
-  - add images (gifs?)
-  - add transitions on slide
+  X add images (gifs?)
+  X add transitions on slide
+  - add proper links + hover
 X limit subpages neon flicker
-- add transitions to pages switch (fade from black)
+X add transitions to pages switch (fade from black)
+- add transition to about short/long version + clearer switch btn
 - nav bar?
