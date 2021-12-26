@@ -4,7 +4,7 @@
     <div class='work-dots'>
       <span v-for="item in content" :key="item.id" :class="[
             'work-dot',
-            active = (currentSlide === item.id),
+           currentSlide === item.id ? 'work-dot--active' : '',
           ]" @click="dotSlide(item.id)"></span>
     </div>
 
@@ -144,7 +144,7 @@ export default {
         id: 0,
         title: "This website [2021]",
         img: "portfolio.png",
-        description: "My introduction portfolio. A responsive single-page application built from an Alpine Docker container. Complete with neon lights.",
+        description: "My introduction portfolio. A responsive single-page application built from a Node based Docker container. Complete with neon lights.",
         tech: [
           techIcons.vue,
           techIcons.ts,
@@ -248,16 +248,30 @@ export default {
       }, 300)
     }
 
-    const dotSlide = (index: number) => {
-      if (index < currentSlide.value) {
-        while (currentSlide.value < index) {
+    let dotTravel = false;
+
+    const dotSlide = async (index: number) => {
+      if (dotTravel) {
+        return;
+      }
+      dotTravel = true;
+      let counter;
+      const timer = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+      if (currentSlide.value < index) {
+        counter = index - currentSlide.value;
+        while (counter--) {
           nextSlide();
+          await timer(800);
         }
-      } else {
-        while (currentSlide.value > index) {
+      } else if (currentSlide.value > index) {
+        counter = currentSlide.value - index;
+        while (counter--) {
           prevSlide();
+          await timer(800);
         }
       }
+      dotTravel = false;
     }
 
     const showSlide = (index: number) => {      

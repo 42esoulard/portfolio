@@ -302,12 +302,36 @@ html, body, div#app {
     }
 }
 
+.work-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.work-dot {
+    cursor: pointer;
+    margin: 5px;
+    width: 10px;
+    height: 10px;
+    color: #333;
+    border-radius: 50%;
+    background-color: #dfd6ce;
+    &--active {
+        border: 2px solid #7766a7;
+        box-shadow: $light-neon-text-shadow-purple;
+        background-color: #8057f2;
+        
+    }
+}
+
 .work-carousel-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .work-carousel-content-wrapper {
@@ -324,12 +348,12 @@ html, body, div#app {
 .work-slide-img-wrapper {
     // @include neon-wrapper;
     // box-shadow: $neon-box-shadow-purple;
-    // @media (max-width: 700px) {
-    //     width: 500px;
-    // }
-    // @media (max-width: 600px) {
-    //     width: 300px;
-    // }
+    @media (max-width: 700px) {
+        width: 500px;
+    }
+    @media (max-width: 600px) {
+        width: 300px;
+    }
     position: relative;
     @include neon-wrapper;
     box-shadow: $neon-box-shadow-black;
@@ -339,6 +363,7 @@ html, body, div#app {
     display: none;
     &--active {
         display: flex;
+        justify-content: center;
         &:hover {
             .work-slide-img-link {
                 visibility: visible;

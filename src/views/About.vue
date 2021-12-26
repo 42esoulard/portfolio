@@ -97,13 +97,44 @@ import { ref } from "vue";
 export default {
   setup(){
     const short = ref(true);
+    let shortText: Element | null;
+    let longText: Element | null;
 
     const toggleLength = (length: string) => {
-      if (length == 'long') {
-        short.value = false;
-      } else if (length == 'short') {
-        short.value = true;
+      shortText = document.querySelector('.about-short');
+      longText = document.querySelector('.about-long');
+      if (length == 'long' && short.value && shortText) {
+        shortText.setAttribute("style", "")
+        shortText.setAttribute("style", "animation: rollToTop 1s ease forwards");
+        setTimeout(() => {
+          short.value = false;
+          longText = document.querySelector('.about-long');
+          if (longText) {
+            longText.setAttribute("style", "")
+            longText.setAttribute("style", "animation: rollFromTop 1s ease forwards");
+          }
+        }, 600)
+        
+      } else if (length == 'short' && !short.value && longText) {
+        longText.setAttribute("style", "")
+        longText.setAttribute("style", "animation: rollToTop 1s ease forwards");
+        
+        setTimeout(() => {
+          short.value = true;
+          shortText = document.querySelector('.about-short');
+          if (shortText) {
+            shortText.setAttribute("style", "")
+            shortText.setAttribute("style", "animation: rollFromTop 1s ease forwards");
+          }
+        }, 600)
       }
+      setTimeout(() => {
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth'
+        });
+      }, 1500)
       
     }
 

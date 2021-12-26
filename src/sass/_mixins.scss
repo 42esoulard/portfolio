@@ -1,9 +1,6 @@
 @import "./variables";
 
 @mixin neon-wrapper {
-    @media(max-width:600px) {
-        width: 400px;
-    }
     box-shadow: $neon-box-shadow-green;
     border-radius: 1.5rem;
     animation: border-flicker 2s linear;
