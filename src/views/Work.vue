@@ -28,6 +28,11 @@
           <div v-if="currentContent.link" class="work-slide-title"><a class="work-slide-title" :href="currentContent.link"> {{ currentContent.title }} </a></div>
           <div v-else class="work-slide-title"><a class="work-slide-title" :href="currentContent.github"> {{ currentContent.title }} </a></div>
           <!-- <div class="work-line">-------------------</div> -->
+          <div class="work-slide-techs">
+            <a v-for="tech in currentContent.tech" :key="tech.name" :href="tech.link">
+              <img :src="tech.img" :title="tech.name" class="work-slide-tech"/>
+            </a>
+          </div>
           <div class="work-slide-description"> {{ currentContent.description }} </div>
           <div class="work-slide-links">
             <!-- <div v-if="currentContent.link" class="work-slide-link"> -->
@@ -56,82 +61,72 @@ import { onMounted, ref } from 'vue';
 export default {
     setup() {
     const SLIDES_NB = 5;
-      // <a href='https://ubuntu.com/desktop/developers'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain-wordmark.svg" title='Ubuntu' width=50/></a>
-      // <a href='https://git-scm.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" title='Git' width=50/></a>
-      // <a href='https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" title='C' width=50/></a>
-      // <a href='http://www.cplusplus.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" title='C++' width=50/></a>
-      // <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Reference'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" title='HTML5' width=50/></a>
-      // <a href='https://cssreference.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" title='CSS3' width=50/></a>
-      // <a href='https://sass-lang.com/documentation'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" title='Sass' width=50/></a>
-      // <a href='https://javascript.info/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" title='JavaScript' width=50/></a>
-      // <a href='https://www.typescriptlang.org/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" title='TypeScript' width=50/></a>
-      // <a href='https://v3.vuejs.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" title='VueJS' width=50/></a>
-      // <a href='https://docs.nestjs.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" title='NestJS' width=50/></a>
-      // <a href='https://webpack.js.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg" title='Webpack' width=50/></a>
-      // <a href='https://www.postgresql.org/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" title='PostgreSQL' width=50/></a>
-      // <a href='http://nginx.org/en/docs/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" width=50/></a>
-      // <a href='https://www.docker.com/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" title='Docker' width=50/></a>
-      // <a href='https://kubernetes.io/'><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" title='Kubernetes' width=50/></a>
+
     const techIcons = {
       vue: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://v3.vuejs.org/",
+        name:"Vue",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
       },
       webpack: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://webpack.js.org/",
+        name:"Webpack",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg",
       },
       sass: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://sass-lang.com/documentation",
+        name:"Sass",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
       },
       css: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://cssreference.io/",
+        name:"CSS",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg",
       },
       js: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://javascript.info/",
+        name:"JavaScript",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      html: {
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference",
+        name: "HTML",
+        img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg",
       },
       ts: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://www.typescriptlang.org/docs/",
+        name:"TypeScript",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
       },
       docker: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://www.docker.com/",
+        name:"Docker",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg",
       },
       openapi: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://swagger.io/specification/",
+        name:"OpenAPI",
+        img:"https://www.vectorlogo.zone/logos/openapis/openapis-icon.svg",
       },
       nest: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://docs.nestjs.com/",
+        name:"NestJS",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
       },
       postgres: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://www.postgresql.org/",
+        name:"PostgreSQL",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
       },
       cpp: {
-        link:"",
-        name:"",
-        img:"",
+        link:"http://www.cplusplus.com/",
+        name:"C++",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
       },
       c: {
-        link:"",
-        name:"",
-        img:"",
+        link:"https://www.cprogramming.com/tutorial/c-tutorial.html?inl=nv",
+        name:"C",
+        img:"https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
       },
     }
 
@@ -147,10 +142,9 @@ export default {
         description: "My introduction portfolio. A responsive single-page application built from a Node based Docker container. Complete with neon lights.",
         tech: [
           techIcons.vue,
-          techIcons.ts,
           techIcons.sass,
+          techIcons.ts,
           techIcons.docker,
-          techIcons.webpack,
         ],
         link: "",
         github: "https://github.com/42esoulard/portfolio",
@@ -162,13 +156,12 @@ export default {
         description: "A fully responsive online multiplayer pong platform, with a functional chat, live view, social features, 42 API authentication, 2FA, and website admin privileges. Group project, developed with docker-compose.",
         tech: [
           techIcons.vue,
-          techIcons.ts,
           techIcons.sass,
-          techIcons.docker,
-          techIcons.openapi,
+          techIcons.ts,
           techIcons.nest,
           techIcons.postgres,
-          techIcons.webpack,
+          techIcons.openapi,
+          techIcons.docker,
         ],
         link: "",
         github: "https://github.com/42esoulard/42_ft_transcendence",
@@ -177,7 +170,7 @@ export default {
         id: 2,
         title: "webserv [2021]",
         img: "webserv.png",
-        description: "An HTTP 1.1 server in C++ 98, according to RFC and based on Nginx (GET, POST, DELETE, PUT methods). Includes requests handling, response building and file serving, customisable server configuration (inspired by NginX's config file), and CGI execution.",
+        description: "An HTTP 1.1 server in C++ 98, according to RFC and inspired by Nginx (GET, POST, DELETE, PUT methods). Includes requests handling, response building and file serving, customisable server configuration, and CGI execution.",
         tech: [
           techIcons.cpp,
         ],
@@ -190,8 +183,9 @@ export default {
         img: "sloth.png",
         description: "A responsive app exercise with OpenWeatherAPI and GiphyAPI. For refined passionates of both weather forecasts and glorious sloths.",
         tech: [
-          techIcons.js,
+          techIcons.html,
           techIcons.css,
+          techIcons.js,
           techIcons.webpack,
         ],
         link: "https://42esoulard.github.io/weather_sloth/",

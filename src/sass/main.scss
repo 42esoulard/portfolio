@@ -447,6 +447,13 @@ html, body, div#app {
     text-align: center;
     margin-bottom: 15px;
     text-decoration: none;
+    font-size: 2rem;
+    @media (max-width: 700px) {
+        font-size: 1.5rem;
+    }
+    @media (max-width: 600px) {
+        font-size: 1rem;
+    }
 }
 
 .work-slide-description {
@@ -498,6 +505,21 @@ html, body, div#app {
     text-align: center;
 }
 
+.work-slide-techs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.work-slide-tech {
+    width: 40px;
+    @media (max-width: 650px) {
+        width: 30px;
+    }
+}
+
 // ------------------ CONTACT
 .contact {
     // margin-top: 30px;
@@ -535,6 +557,10 @@ html, body, div#app {
         height: 150px;
         max-height: 550px;
         max-width: 350px;
+        width: 400px;
+        @media (max-width: 700px) {
+            width: 200px;
+        }
     }
 }
 
