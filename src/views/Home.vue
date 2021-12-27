@@ -10,8 +10,20 @@
 </template>
 
 <script lang='ts'>
-export default {
+import { onMounted } from 'vue';
 
+export default {
+  setup() {
+    onMounted(() => {
+      setTimeout(() => {
+        window.scroll({
+          top: 0, 
+          left: 0, 
+          behavior: 'smooth'
+        });
+      }, 500)
+    })
+  }
 }
 </script>
 

@@ -3,7 +3,6 @@ import Home from "@/views/Home.vue"
 import About from "@/views/About.vue"
 import Work from "@/views/Work.vue"
 import Contact from "@/views/Contact.vue"
-import PageNotFound from "@/views/PageNotFound.vue"
 
 const routes = [
   {
@@ -28,8 +27,7 @@ const routes = [
   },
   {
     path: '/:catchAll(.*)*',
-    name: "PageNotFound",
-    component: PageNotFound,
+    redirect: "/",
   },
 ]
 

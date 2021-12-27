@@ -25,11 +25,11 @@
 
         <div class="work-slide-content">
           <div class="work-line">-----------------------------------------------</div>
-          <div v-if="currentContent.link" class="work-slide-title"><a class="work-slide-title" :href="currentContent.link"> {{ currentContent.title }} </a></div>
-          <div v-else class="work-slide-title"><a class="work-slide-title" :href="currentContent.github"> {{ currentContent.title }} </a></div>
+          <div v-if="currentContent.link" class="work-slide-title"><a class="work-slide-title" target="_blank" :href="currentContent.link"> {{ currentContent.title }} </a></div>
+          <div v-else class="work-slide-title"><a class="work-slide-title" target="_blank" :href="currentContent.github"> {{ currentContent.title }} </a></div>
           <!-- <div class="work-line">-------------------</div> -->
           <div class="work-slide-techs">
-            <a v-for="tech in currentContent.tech" :key="tech.name" :href="tech.link">
+            <a v-for="tech in currentContent.tech" :key="tech.name" target="_blank" :href="tech.link">
               <img :src="tech.img" :title="tech.name" class="work-slide-tech"/>
             </a>
           </div>
@@ -43,7 +43,7 @@
                   :src="getImgUrl('github-light.png')"
                 />See on github
               </a>
-              <a v-if="currentContent.link" class="work-slide-link" :href="currentContent.link" >Visit website </a>
+              <a v-if="currentContent.link" class="work-slide-link" target="_blank" :href="currentContent.link" >Visit website </a>
 
             <!-- </div> -->
           </div>
@@ -209,6 +209,14 @@ export default {
     let carousel: Element | null;
 
     onMounted(() => {
+      setTimeout(() => {
+        window.scroll({
+          top: 0, 
+          left: 0, 
+          behavior: 'smooth'
+        });
+      }, 500)
+   
       carousel = document.querySelector(".work-carousel-content-wrapper");
     })
 

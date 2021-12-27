@@ -124,7 +124,7 @@ html, body, div#app {
     &:hover {
         color:#ffd8d8;
         text-shadow: $neon-text-shadow-purple;
-        animation: letter-flicker 2s linear 3;
+        // animation: letter-flicker 2s linear 3;
     }
 }
 
@@ -142,7 +142,7 @@ html, body, div#app {
         color:aliceblue;
         font-size: 4rem;
         &:hover {
-            animation: letter-flicker 2s linear 3;
+            // animation: letter-flicker 2s linear 3;
             color:#edd8ff;
             text-shadow: $neon-text-shadow-purple;
         }
@@ -191,7 +191,7 @@ html, body, div#app {
 }
 .about-btn {
     border-style: none;
-    
+    font-family: $font-nerd;
     // border-color: rgba(68, 68, 68, 0.877);
     padding:5px;
     background-color: rgba(128, 128, 128, 0.308);
@@ -202,13 +202,17 @@ html, body, div#app {
         background-color: rgba(0, 0, 0, 0.363);
         // border-color: black;
     }
+    &:hover {
+        background-color: rgba(212, 212, 212, 0.308);
+        color: rgba(204, 204, 204, 0.699);
+    }
 }
 
 .about-more-icon {
     @include neon-text-animated;
     cursor: pointer;
     &:hover {
-        animation: letter-flicker 2s linear 3;
+        // animation: letter-flicker 2s linear 3;
         color:#edd8ff;
         text-shadow: $neon-text-shadow-purple;
     }
