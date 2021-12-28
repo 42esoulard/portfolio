@@ -1,7 +1,7 @@
 X switch to ts => solve weird scss webpack issue
-- add github link
-- make functional contact page
-- add captcha to contact page
+X add github link
+X make functional contact page
+X add captcha to contact page
 X build carousel:
   X add images (gifs?)
   X add transitions on slide

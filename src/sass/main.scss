@@ -561,9 +561,10 @@ html, body, div#app {
         height: 150px;
         max-height: 550px;
         max-width: 350px;
+        margin-bottom: 20px;
         width: 400px;
         @media (max-width: 700px) {
-            width: 200px;
+            width: 275px;
         }
     }
 }
@@ -588,6 +589,20 @@ html, body, div#app {
         animation: letter-flicker 2s linear 3;
     }
     cursor: pointer;
+}
+
+.contact-gh-link {
+    height: 2rem;
+    width: 2rem;
+    margin-top: -45px;
+    &:hover {
+        animation: spin 800ms forwards;
+    }
+}
+
+.contact-err {
+    color: red;
+    font-size: 0.8rem;
 }
 
 // // ------------------ FOOTER
