@@ -67,12 +67,15 @@
   font-size:2rem;
   &:hover {
       text-decoration: none;
-      // @include neon-text;
       font-size: 2rem;
       font-family: $font-title-hipster;
   }
   @media (max-width: 600px) {
       padding: 10px;
+  }
+  &--gh {
+    width: 40px;
+    height: 40px;
   }
 }
 

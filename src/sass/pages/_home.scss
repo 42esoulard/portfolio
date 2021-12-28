@@ -72,3 +72,47 @@
   margin-left: 30px;
   font-size: 2rem;
 }
+
+.home-hire-me-wrapper {
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  @include neon-wrapper-round;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -35%;
+  right: -35%;
+  height: 100px;
+  width: 100px;
+  @media (max-width: 600px) {
+    top: -30%;
+    right: -10%;
+    width: 80px;
+    height: 80px;
+  }
+  transform: rotate(30deg);
+  &:hover {
+    @include neon-text-glow;
+  }
+  
+}
+
+.home-hire-me {
+  @include neon-text;
+  color:#ffd8d8;
+  text-shadow: $light-neon-text-shadow-purple;
+  font-size: 2rem;
+  width: 100px;
+  @media (max-width: 600px) {
+    font-size: 1.8rem;
+    width: 60px;
+  }
+  
+  text-align: center;
+  // position: relative;
+  // left: -80px;
+  // @media(max-width:600px) {
+  //     left: -50px;
+  // }
+}

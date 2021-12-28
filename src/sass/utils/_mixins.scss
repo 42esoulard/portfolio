@@ -6,10 +6,18 @@
     animation: border-flicker 2s linear;
 }
 
+@mixin neon-wrapper-round {
+  box-shadow: $neon-box-shadow-purple;
+  border-radius: 50%;
+  // animation: border-flicker 2s linear;
+  padding: 5px;
+}
+
 @mixin neon-text {
     font-family: $font-title-double;
     color:#d8fffa;
     text-shadow: $neon-text-shadow-green;
+    transform:rotateX(10%)
 }
 
 @mixin light-neon-text {
@@ -23,6 +31,15 @@
     &--offset {
         animation: letter-flicker 2s linear 3;
     }
+}
+
+@mixin neon-text-glow {
+  font-family: $font-title-double;
+  color:#f4d8ff;
+  animation: text-glow 3s linear;
+  // &--offset {
+  //     animation: letter-flicker 2s linear 3;
+  // }
 }
 
 @keyframes text-flicker {
@@ -114,4 +131,34 @@
     92% {
       opacity:1;
     }
+}
+
+
+@keyframes text-glow {
+  0% {
+    opacity:0.1;
+    transform: scale(0.5);
+    transform: rotate(0deg);
+  }
+  20% {
+    opacity:0.9;
+    transform: scale(1.3);
+  }
+  45% {
+    opacity:0.5;
+    
+  }
+  60% {
+    opacity:1;
+    transform: scale(0.6);
+  }
+  72% {
+    opacity:0.3;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity:1;
+    transform: scale(1);
+    transform: rotate(30deg);
+  }
 }

@@ -13,4 +13,4 @@ X add transitions to pages switch (fade from black)
 X add transition to about short/long version + clearer switch btn
 X nav bar?
 X hamburger menu
-- add hire me link to contact on home
+X add hire me link to contact on home
