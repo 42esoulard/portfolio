@@ -7,10 +7,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 40px;
+  padding-top: 70px;
   @media(max-width:600px) {
       width:400px;
-      padding-top: 70px;
+  }
+  @media(max-width:400px) {
+    width:300px;
   }
 }
 
@@ -66,7 +68,6 @@
       margin-left: -20px;
       @media(max-width: 600px) {
         font-size: 3rem;
-        
       }
       &:hover {
           // animation: letter-flicker 2s linear 3;
@@ -81,7 +82,7 @@
   margin-left: 30px;
   font-size: 2rem;
   @media(max-width: 600px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     margin-top: 20px;
   }
 }

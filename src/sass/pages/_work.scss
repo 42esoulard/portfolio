@@ -21,6 +21,9 @@
   @media (max-width: 600px) {
       font-size: 3rem;
   }
+  @media (max-width: 400px) {
+    font-size: 2.5rem;
+  }
 }
 
 .work-dots {
@@ -136,11 +139,17 @@
   &--prev {
       left: 20px;
       margin-right: 20px;
+      @media (max-width: 600px) {
+        margin-right: 0px;
+      }
       border-radius:10px 3px 3px 10px;
   }
   &--next {
       right:20px;
       margin-left: 20px;
+      @media (max-width: 600px) {
+        margin-left: 0px;
+      }
       border-radius:3px 10px 10px 3px;
   }
   &:hover {
