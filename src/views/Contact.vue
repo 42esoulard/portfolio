@@ -6,23 +6,23 @@
   </a>
   <form class="contact-form" @submit.prevent="sendMessage()">
     <label class="contact-label" for="from_name"><span class="about-line">-----</span>NAME<span class="about-line">-----</span></label>
-    <input class="contact-input" name="from_name" id="name" minlength="1" maxlength="100"  v-model="from_name">
+    <input class="contact-input" name="from_name" id="name" minlength="1" maxlength="100"  v-model="from_name" @input="checkName()">
     <label class="contact-label" for="from_email"><span class="about-line">-----</span>EMAIL<span class="about-line">-----</span></label>
     <input class="contact-input" name="from_email" id="email" type="email" minlength="2" maxlength="100" v-model="from_email" @input="checkEmail()">
     <label class="contact-label" for="message"><span class="about-line">-----</span>MESSAGE<span class="about-line">-----</span></label>
-    <textarea class="contact-input contact-input--message" id="message" name="message" minlength="1" maxlength="100000" v-model="message"></textarea>
+    <textarea class="contact-input contact-input--message" id="message" name="message" minlength="1" maxlength="100000" v-model="message" @input="checkMessage()"></textarea>
     
-    <vue-recaptcha
-        theme="dark"
-        size="normal"
-        :tabindex="0"
-        @widgetId="recaptchaWidget = $event"
-        @verify="callbackVerify($event)"
-        @expired="callbackExpired()"
-        @fail="callbackFail()"
-      />
-    <div v-if="robot && captchaErr" class="contact-err"> {{ captchaErr }} </div>
-    
+    <div class="contact-captcha-wrapper"> 
+      <vue-recaptcha
+          theme="dark"
+          size="normal"
+          :tabindex="0"
+          @widgetId="recaptchaWidget = $event"
+          @verify="callbackVerify($event)"
+          @expired="callbackExpired()"
+          @fail="callbackFail()"
+        />
+    </div>
     <div class="contact-btn-neon-wrapper">
       <div class="contact-btn-neon-text" @click="sendMessage()">Send</div>
     </div>
@@ -65,9 +65,11 @@ export default defineComponent({
 
       if (!EmailValidator.validate(from_email.value)) {
         emailElem.setCustomValidity("Please enter a valid email adress");
+        emailElem.classList.add('contact-input--err');
         valid = false;
       } else {
         emailElem.setCustomValidity("");
+        emailElem.classList.remove('contact-input--err');
         valid = true;
       }
       emailElem.reportValidity();
@@ -83,8 +85,10 @@ export default defineComponent({
       valid = true;
       if (!nameElem.value) {
         nameElem.setCustomValidity("Please enter your name");
+        nameElem.classList.add('contact-input--err');
         valid = false;
       } else {
+        nameElem.classList.remove('contact-input--err')
         nameElem.setCustomValidity("");
       }
       nameElem.reportValidity();
@@ -100,8 +104,10 @@ export default defineComponent({
       valid = true;
       if (!msgElem.value) {
         msgElem.setCustomValidity("Please enter your message");
+        msgElem.classList.add('contact-input--err')
         valid = false;
       } else {
+        msgElem.classList.remove('contact-input--err');
         msgElem.setCustomValidity("");
       }
       msgElem.reportValidity();
@@ -123,7 +129,9 @@ export default defineComponent({
         left: 0,
         behavior: "smooth"
       });
-  }
+    }
+
+    
 
     const sendMessage = () => {
       if (wasSubmitted.value || !checkName() || !checkEmail() || !checkMessage()) {
@@ -131,7 +139,11 @@ export default defineComponent({
         return;
       }
       if (robot.value) {
-        captchaErr.value = "Please confirm you're not a robot";
+        const captcha = document.querySelector(".contact-captcha-wrapper");
+        if (captcha)
+          captcha.classList.add('contact-input--captcha-err')
+        // captchaErr.value = "Please confirm you're not a robot";
+
         return;
       }
 
@@ -181,6 +193,9 @@ export default defineComponent({
     const callbackVerify = (res: string) => {
       if (res) {
         robot.value = false;
+        const captcha = document.querySelector(".contact-captcha-wrapper");
+        if (captcha)
+          captcha.classList.remove('contact-input--err')
       }
     };
     const callbackExpired = () => {
@@ -204,7 +219,9 @@ export default defineComponent({
       from_email,
       message,
       sendMessage,
+      checkName,
       checkEmail,
+      checkMessage,
       robot,
       captchaErr
     }

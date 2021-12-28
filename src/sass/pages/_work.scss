@@ -173,6 +173,9 @@
 
 .work-slide-description {
   text-align: justify;
+  @media(max-width: 600px) {
+    width: 500px;
+  }
 }
 
 .work-slide-links {

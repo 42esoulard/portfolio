@@ -115,6 +115,10 @@
       width: 500px;
       padding:50px;
   }
+  @media (max-width: 600px) {
+    width: 400px;
+}
+
 }
 
 .about-long {
@@ -122,6 +126,9 @@
   @media (min-width: 1200px) {
       display:flex;
       flex-direction: row;
+  }
+  @media (max-width: 600px) {
+    width: 360px;
   }
 }
 
