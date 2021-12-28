@@ -251,10 +251,16 @@ html, body, div#app {
 }
 
 .about-stack-icons {
-    max-width:430px;
+    max-width:700px;
     @media (max-width: 600px) {
         width:300px;
     }
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.about-stack-icon {
+    width: 40px;
 }
 
 .about-column {
@@ -352,8 +358,8 @@ html, body, div#app {
 .work-slide-img-wrapper {
     // @include neon-wrapper;
     // box-shadow: $neon-box-shadow-purple;
-    @media (max-width: 700px) {
-        width: 500px;
+    @media (max-width: 800px) {
+        width: 450px;
     }
     @media (max-width: 600px) {
         width: 300px;
@@ -381,8 +387,8 @@ html, body, div#app {
 }
 
 .work-slide-img {
-    @media (max-width: 700px) {
-        width: 500px;
+    @media (max-width: 800px) {
+        width: 450px;
     }
     @media (max-width: 600px) {
         width: 300px;
@@ -413,12 +419,12 @@ html, body, div#app {
 
 .work-slide-btn {
     cursor: pointer;
-    margin-top: 350px;
-    @media (max-width: 700px) {
-        margin-top: 300px;
+    margin-top: 380px;
+    @media (max-width: 800px) {
+        margin-top: 285px;
     }
     @media (max-width: 600px) {
-        margin-top: 150px;
+        margin-top: 190px;
     }
     
     padding-bottom: 0.3rem;
@@ -452,7 +458,7 @@ html, body, div#app {
     margin-bottom: 15px;
     text-decoration: none;
     font-size: 2rem;
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
         font-size: 1.5rem;
     }
     @media (max-width: 600px) {
@@ -502,7 +508,7 @@ html, body, div#app {
     @media (max-width: 800px) {
         font-size: 1.5rem;
     }
-    @media (max-width: 650px) {
+    @media (max-width: 600px) {
         font-size: 1rem;
     }
     width: 100%;
