@@ -1,0 +1,28 @@
+@import "../base/base";
+
+// ------------------ FOOTER
+
+.footer-container {
+  font-size: 0.7rem;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 100%, rgba(0, 0, 0, 0.835) 30%, rgba(0,0,0,1) 0%);
+  color: rgba(128, 128, 128, 0.63);
+  font-family: $font-title-double;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: grey;
+  &:hover {
+      @include light-neon-text;
+      text-shadow: $light-neon-text-shadow-purple;
+  }
+}

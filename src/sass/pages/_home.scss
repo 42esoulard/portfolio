@@ -1,0 +1,74 @@
+@import "../base/base";
+
+// ------------------ HOME
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @media(max-width:600px) {
+      width:400px;
+  }
+}
+
+.home-neon-wrapper {
+  @include neon-wrapper;
+  display: flex;
+  justify-content: center;
+}
+
+.home-neon-pretext {
+  @include neon-text;
+  font-family: $font-title-bold-retro;
+  font-size: 4rem;
+  position: relative;
+  left: -80px;
+  @media(max-width:600px) {
+      left: -50px;
+  }
+}
+
+.home-neon-text {
+  @include neon-text-animated;
+  text-decoration: none;
+  font-size: 8rem;
+  display: block;
+  padding: 0 2rem 0 2rem;
+  @media(max-width:600px) {
+      font-size: 6rem;
+      padding:0;
+  }
+  &:hover {
+      color:#ffd8d8;
+      text-shadow: $neon-text-shadow-purple;
+      // animation: letter-flicker 2s linear 3;
+  }
+}
+
+.home-subtitle {
+  
+  @include light-neon-text;
+  text-shadow: $med-neon-text-shadow-green;
+  font-family: $font-nerd;
+  color:#d8fffa;
+  position: relative;
+  &--dev {
+      text-decoration: none;
+      font-weight: 300;
+      font-family: $font-nerd;
+      color:aliceblue;
+      font-size: 4rem;
+      &:hover {
+          // animation: letter-flicker 2s linear 3;
+          color:#edd8ff;
+          text-shadow: $neon-text-shadow-purple;
+      }
+  }
+  &--neon {
+      display: block;
+  }
+  margin-top: 50px;
+  margin-left: 30px;
+  font-size: 2rem;
+}
