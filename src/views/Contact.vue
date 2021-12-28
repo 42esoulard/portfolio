@@ -195,7 +195,7 @@ export default defineComponent({
         robot.value = false;
         const captcha = document.querySelector(".contact-captcha-wrapper");
         if (captcha)
-          captcha.classList.remove('contact-input--err')
+          captcha.classList.remove('contact-input--captcha-err')
       }
     };
     const callbackExpired = () => {
