@@ -1,7 +1,7 @@
 <template>
 <div class="contact">
   <h1 class="contact-title">Contact me</h1>
-  <a target="_blank" href='https://github.com/42esoulard'>
+  <a target="_blank" href='https://github.com/42esoulard' title="GitHub: 42esoulard">
     <img class="contact-gh-link" src='../assets/github-light.png' />
   </a>
   <form class="contact-form" @submit.prevent="sendMessage()">
@@ -131,8 +131,6 @@ export default defineComponent({
       });
     }
 
-    
-
     const sendMessage = () => {
       if (wasSubmitted.value || !checkName() || !checkEmail() || !checkMessage()) {
         scrollToInvalid();
@@ -144,8 +142,6 @@ export default defineComponent({
           captcha.classList.add('contact-input--err')
           captcha.classList.add('contact-input--captcha-err')
         }
-        // captchaErr.value = "Please confirm you're not a robot";
-
         return;
       }
 
@@ -197,7 +193,7 @@ export default defineComponent({
         robot.value = false;
         const captcha = document.querySelector(".contact-captcha-wrapper");
         if (captcha) {
-          captcha.classList.add('contact-input--err')
+          captcha.classList.remove('contact-input--err')
           captcha.classList.remove('contact-input--captcha-err')
         }
       }

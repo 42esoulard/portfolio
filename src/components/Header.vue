@@ -11,7 +11,7 @@
         <router-link class="nav-link" :to="{ name: 'About'}" @click="openMobileNav">ABOUT</router-link> | 
         <router-link class="nav-link" :to="{ name: 'Work'}" @click="openMobileNav">WORK</router-link> | 
         <router-link class="nav-link" :to="{ name: 'Contact'}" @click="openMobileNav">CONTACT</router-link> | 
-        <a target="_blank" href='https://github.com/42esoulard'>
+        <a target="_blank" href='https://github.com/42esoulard' title="GitHub: 42esoulard">
           <img class="nav-link nav-link--gh" src='../assets/github-light.png' />
         </a>
       </div>
