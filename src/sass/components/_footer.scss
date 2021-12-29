@@ -22,7 +22,6 @@
   text-decoration: none;
   color: grey;
   &:hover {
-      @include light-neon-text;
-      text-shadow: $light-neon-text-shadow-purple;
+      @include light-neon-text-purple;
   }
 }

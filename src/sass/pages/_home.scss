@@ -24,7 +24,7 @@
 }
 
 .home-neon-pretext {
-  @include neon-text;
+  @include neon-text-green;
   font-family: $font-title-bold-retro;
   font-size: 4rem;
   position: relative;
@@ -37,6 +37,7 @@
 
 .home-neon-text {
   @include neon-text-animated;
+  font-family: $font-title-double;
   text-decoration: none;
   font-size: 8rem;
   display: block;
@@ -46,44 +47,30 @@
       padding:0;
   }
   &:hover {
-      color:#ffd8d8;
-      text-shadow: $neon-text-shadow-purple;
-      // animation: letter-flicker 2s linear 3;
+      @include neon-text-purple;
   }
 }
 
 .home-subtitle {
-  
-  @include light-neon-text;
-  text-shadow: $med-neon-text-shadow-green;
-  font-family: $font-nerd;
-  color:#d8fffa;
+  @include med-neon-text;
+  display: block;
   position: relative;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 2rem;
+  @media(max-width: 600px) {
+    font-size: 1.5rem;
+  }
   &--dev {
       text-decoration: none;
-      font-weight: 300;
-      font-family: $font-nerd;
-      color:aliceblue;
       font-size: 4rem;
       margin-left: -20px;
       @media(max-width: 600px) {
         font-size: 3rem;
       }
       &:hover {
-          // animation: letter-flicker 2s linear 3;
-          color:#edd8ff;
-          text-shadow: $neon-text-shadow-purple;
+        @include neon-text-purple;
       }
-  }
-  &--neon {
-      display: block;
-  }
-  margin-top: 50px;
-  margin-left: 30px;
-  font-size: 2rem;
-  @media(max-width: 600px) {
-    font-size: 1.5rem;
-    margin-top: 20px;
   }
 }
 
@@ -109,24 +96,14 @@
   &:hover {
     @include neon-text-glow;
   }
-  
 }
 
 .home-hire-me {
-  @include neon-text;
-  color:#ffd8d8;
-  text-shadow: $light-neon-text-shadow-purple;
+  @include light-neon-text-purple;
+  font-family: $font-title-double;
   font-size: 2rem;
-  width: 100px;
   @media (max-width: 600px) {
     font-size: 1.8rem;
-    width: 60px;
   }
-  
   text-align: center;
-  // position: relative;
-  // left: -80px;
-  // @media(max-width:600px) {
-  //     left: -50px;
-  // }
 }

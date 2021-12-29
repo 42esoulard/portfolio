@@ -140,8 +140,10 @@ export default defineComponent({
       }
       if (robot.value) {
         const captcha = document.querySelector(".contact-captcha-wrapper");
-        if (captcha)
+        if (captcha) {
+          captcha.classList.add('contact-input--err')
           captcha.classList.add('contact-input--captcha-err')
+        }
         // captchaErr.value = "Please confirm you're not a robot";
 
         return;
@@ -194,8 +196,10 @@ export default defineComponent({
       if (res) {
         robot.value = false;
         const captcha = document.querySelector(".contact-captcha-wrapper");
-        if (captcha)
+        if (captcha) {
+          captcha.classList.add('contact-input--err')
           captcha.classList.remove('contact-input--captcha-err')
+        }
       }
     };
     const callbackExpired = () => {

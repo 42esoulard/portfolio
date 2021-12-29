@@ -8,7 +8,6 @@
   top: 0;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.835) 50%, rgba(0,0,0,1) 100%);
   position: fixed;
-  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -62,13 +61,12 @@
 .nav-link {
   text-decoration: overline underline;
   text-decoration-color: rgba(240, 248, 255, 0) ;
-  @include light-neon-text;
+  @include light-neon-text-green;
   font-family: $font-title-hipster;
   font-size:2rem;
   &:hover {
       text-decoration: none;
       font-size: 2rem;
-      font-family: $font-title-hipster;
   }
   @media (max-width: 600px) {
       padding: 10px;

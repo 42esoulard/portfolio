@@ -15,7 +15,8 @@
 }
 
 .about-title {
-  @include neon-text-animated;
+  @include neon-text-green;
+  font-family: $font-title-double;
   font-size: 4rem;
   @media (max-width: 600px) {
       font-size: 3rem;
@@ -41,7 +42,7 @@
   color: rgba(204, 204, 204, 0.301);
   border-radius: 10px;
   &--active {
-      @include light-neon-text;
+      @include light-neon-text-green;
       background-color: rgba(0, 0, 0, 0.363);
   }
   &:hover {
@@ -52,6 +53,7 @@
 
 .about-more-icon {
   @include neon-text-animated;
+  font-family: $font-title-double;
   cursor: pointer;
   &:hover {
       // animation: letter-flicker 2s linear 3;
@@ -77,7 +79,8 @@
 
 .about-line {
   display: inline-block;
-  @include neon-text;
+  @include neon-text-green;
+  font-family: $font-title-double;
   color:#edd8ff;
   text-shadow: $neon-text-shadow-purple;
   margin-right: 10px;
@@ -133,5 +136,5 @@
 }
 
 .about-highlight {
-  @include light-neon-text;
+  @include light-neon-text-green;
 }
