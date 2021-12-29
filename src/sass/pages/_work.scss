@@ -137,20 +137,20 @@
   }
   padding-bottom: 0.3rem;
   &--prev {
-      left: 20px;
-      margin-right: 20px;
-      @media (max-width: 600px) {
-        margin-right: 0px;
-      }
-      border-radius:10px 3px 3px 10px;
+    left: 20px;
+    margin-right: 20px;
+    @media (max-width: 600px) {
+      margin-right: 0px;
+    }
+    border-radius:10px 3px 3px 10px;
   }
   &--next {
-      right:20px;
-      margin-left: 20px;
-      @media (max-width: 600px) {
-        margin-left: 0px;
-      }
-      border-radius:3px 10px 10px 3px;
+    right:20px;
+    margin-left: 20px;
+    @media (max-width: 600px) {
+      margin-left: 0px;
+    }
+    border-radius:3px 10px 10px 3px;
   }
   &:hover {
       @include neon-text-animated;

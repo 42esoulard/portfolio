@@ -27,7 +27,6 @@
           <div class="work-line">-----------------------------------------------</div>
           <div v-if="currentContent.link" class="work-slide-title"><a class="work-slide-title" target="_blank" :href="currentContent.link"> {{ currentContent.title }} </a></div>
           <div v-else class="work-slide-title"><a class="work-slide-title" target="_blank" :href="currentContent.github"> {{ currentContent.title }} </a></div>
-          <!-- <div class="work-line">-------------------</div> -->
           <div class="work-slide-techs">
             <a v-for="tech in currentContent.tech" :key="tech.name" target="_blank" :href="tech.link">
               <img :src="tech.img" :title="tech.name" class="work-slide-tech"/>
@@ -35,17 +34,12 @@
           </div>
           <div class="work-slide-description"> {{ currentContent.description }} </div>
           <div class="work-slide-links">
-            <!-- <div v-if="currentContent.link" class="work-slide-link"> -->
-            <!-- </div> -->
-            <!-- <div class="work-slide-link">  -->
               <a target="_blank" class="work-slide-link" :href="currentContent.github">
                 <img class="work-slide-icon"
                   :src="getImgUrl('github-light.png')"
                 />See on github
               </a>
               <a v-if="currentContent.link" class="work-slide-link" target="_blank" :href="currentContent.link" >Visit website </a>
-
-            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -57,6 +51,7 @@
 
 <script lang='ts'>
 import { onMounted, ref } from 'vue';
+import "swiped-events";
 
 export default {
     setup() {
@@ -249,6 +244,14 @@ export default {
         carousel.setAttribute("style", "animation: leftSlideIn 1s ease forwards");
       }, 300)
     }
+  
+    document.addEventListener('swiped-left', () => {
+      nextSlide();
+    });
+
+    document.addEventListener('swiped-right', () => {
+      prevSlide();
+    });
 
     let dotTravel = false;
 
