@@ -5,7 +5,7 @@
   color: $color-light;
 }
 .contact-title {
-  @include neon-text-animated;
+  @include light-neon-text-animated;
   font-family: $font-title-double;
   font-size: 4rem;
   @media (max-width: 600px) {

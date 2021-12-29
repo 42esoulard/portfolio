@@ -16,6 +16,7 @@ html, body, div#app {
   background-color: $color-dark;
   margin:0px;
   padding:0px;
+  animation: fadein 2s ease-in-out;
 }
 
 .main-container {

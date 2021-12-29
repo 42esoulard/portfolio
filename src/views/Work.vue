@@ -258,19 +258,16 @@ export default {
       }
       dotTravel = true;
       let counter;
-      const timer = (ms: number) => new Promise(res => setTimeout(res, ms));
 
       if (currentSlide.value < index) {
         counter = index - currentSlide.value;
         while (counter--) {
           nextSlide();
-          await timer(800);
         }
       } else if (currentSlide.value > index) {
         counter = currentSlide.value - index;
         while (counter--) {
           prevSlide();
-          await timer(800);
         }
       }
       dotTravel = false;
