@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@600&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Wire+One&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=block');
+
+$font-title-bold-retro: 'Limelight', cursive;
+$font-title-double: 'Tourney', cursive;
+$font-title-hipster: 'Wire One', sans-serif;
+$font-nerd: 'Open Sans', sans-serif;
+$font-text: 'Poppins', sans-serif;
+
 @import "./components/header";
 @import "./components/footer";
 @import "./pages/home";
