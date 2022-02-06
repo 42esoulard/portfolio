@@ -1,8 +1,8 @@
-import { createWebHistory, createRouter } from "vue-router"
-import Home from "@/views/Home.vue"
-import About from "@/views/About.vue"
-import Work from "@/views/Work.vue"
-import Contact from "@/views/Contact.vue"
+import { createWebHistory, createRouter } from "vue-router";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
+import Work from "@/views/Work.vue";
+import Contact from "@/views/Contact.vue";
 
 const routes = [
   {
@@ -26,14 +26,14 @@ const routes = [
     component: Contact,
   },
   {
-    path: '/:catchAll(.*)*',
+    path: "/:catchAll(.*)*",
     redirect: "/",
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

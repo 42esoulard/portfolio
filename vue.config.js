@@ -1,11 +1,10 @@
 module.exports = {
-    configureWebpack: {
-        devServer: {
-            clientLogLevel: 'info',
-            watchOptions: {
-                poll: true
-            }
-        },
+  configureWebpack: {
+    devServer: {
+      clientLogLevel: "info",
+      watchOptions: {
+        poll: true,
+      },
     },
-    
-}
+  },
+};

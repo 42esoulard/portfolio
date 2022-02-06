@@ -1,9 +1,9 @@
 @import "./variables";
 
 @mixin neon-wrapper {
-    box-shadow: $neon-box-shadow-green;
-    border-radius: 1.5rem;
-    animation: border-flicker 2s linear;
+  box-shadow: $neon-box-shadow-green;
+  border-radius: 1.5rem;
+  animation: border-flicker 2s linear;
 }
 
 @mixin neon-wrapper-black {
@@ -19,44 +19,44 @@
 }
 
 @mixin neon-text-green {
-    color:#d8fffa;
-    text-shadow: $neon-text-shadow-green;
+  color: #d8fffa;
+  text-shadow: $neon-text-shadow-green;
 }
 
 @mixin neon-text-purple {
-  color:#f7d8ff;
+  color: #f7d8ff;
   text-shadow: $neon-text-shadow-purple;
 }
 
 @mixin light-neon-text-green {
-  color:#d8fffa;
+  color: #d8fffa;
   text-shadow: $light-neon-text-shadow-green;
 }
 
 @mixin light-neon-text-purple {
-  color:#f1d8ff;
+  color: #f1d8ff;
   text-shadow: $light-neon-text-shadow-purple;
 }
 
 @mixin med-neon-text {
-  color:#d8fffa;
+  color: #d8fffa;
   text-shadow: $med-neon-text-shadow-green;
   font-family: $font-nerd;
 }
 
 @mixin neon-text-animated {
-    @include neon-text-green;
-    animation: text-flicker 3s linear;
-    &--offset {
-        animation: letter-flicker 2s linear 3 2s;
-    }
+  @include neon-text-green;
+  animation: text-flicker 3s linear;
+  &--offset {
+    animation: letter-flicker 2s linear 3 2s;
+  }
 }
 
 @mixin light-neon-text-animated {
   @include light-neon-text-green;
   animation: text-flicker 3s linear;
   &--offset {
-      animation: letter-flicker 2s linear 3 2s;
+    animation: letter-flicker 2s linear 3 2s;
   }
 }
 
@@ -64,128 +64,128 @@
   @include light-neon-text-purple;
   animation: text-flicker 3s linear 500ms;
   &--offset {
-      animation: letter-flicker 2s linear 3 600ms;
+    animation: letter-flicker 2s linear 3 600ms;
   }
 }
 
 @keyframes text-flicker {
-    0% {
-      opacity:0.1;
-    }
-    6% {
-      opacity:1;
-    }
-    9% {
-      opacity:0.1;
-    }
-    14% {
-      opacity:1;
-    }
-    18% {
-      opacity:0.1;
-    }
-    24% {
-      opacity:1;
-    }
-    27% {
-      opacity:0.3;
-    }
-    30% {
-      opacity:1;
-    }
-    70% {
-      opacity:0.7;
-    }
-    75% {
-      opacity:0.2;
-    }
-    87% {
-      opacity:.9;
-    }
-    100% {
-      opacity:.9;
-    }
+  0% {
+    opacity: 0.1;
+  }
+  6% {
+    opacity: 1;
+  }
+  9% {
+    opacity: 0.1;
+  }
+  14% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 0.1;
+  }
+  24% {
+    opacity: 1;
+  }
+  27% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  87% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
 }
-  
-  @keyframes border-flicker {
-    0% {
-      opacity:0.1;
-    }
-    6% {
-      opacity:1;
-    }
-    12% {
-      opacity:0.1;
-    }
-    
-    20% {
-      opacity:1;
-    }
-    70% {
-      opacity:0.7;
-    }
-    100% {
-      opacity:1;
-    }
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  6% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-  
-  @keyframes letter-flicker {
-    0% {
-      opacity:0.1;
-    }
-    6% {
-      opacity:0.1;
-    }
-    15% {
-      opacity:1;
-    }
-    19% {
-      opacity:1;
-    }
-    26% {
-      opacity:0.1;
-    }
-    30% {
-      opacity:1;
-    }
-    80% {
-      opacity:1;
-    }
-    86% {
-      opacity:0.4;
-    }
-    92% {
-      opacity:1;
-    }
+
+@keyframes letter-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  6% {
+    opacity: 0.1;
+  }
+  15% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  86% {
+    opacity: 0.4;
+  }
+  92% {
+    opacity: 1;
+  }
 }
 
 @keyframes text-glow {
   0% {
-    opacity:0.1;
+    opacity: 0.1;
     transform: scale(0.5);
     transform: rotate(0deg);
   }
   80% {
-    opacity:1;
+    opacity: 1;
     transform: scale(1.4);
   }
   88% {
-    opacity:0.4;
+    opacity: 0.4;
     transform: scale(1.4);
   }
   100% {
-    opacity:1;
+    opacity: 1;
     transform: scale(1.4);
   }
 }
 
 @keyframes text-glow-end {
   0% {
-    opacity:0.3;
+    opacity: 0.3;
     transform: scale(1.4);
   }
   100% {
-    opacity:1;
+    opacity: 1;
     transform: scale(1);
     transform: rotate(30deg);
   }

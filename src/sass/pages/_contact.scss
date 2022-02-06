@@ -9,12 +9,12 @@
   font-family: $font-title-double;
   font-size: 4rem;
   @media (max-width: 600px) {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 }
 
 .contact-form {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,27 +26,27 @@
   display: block;
   font-size: 3rem;
   @media (max-width: 600px) {
-      font-size: 2rem;
+    font-size: 2rem;
   }
 }
 
 .contact-input {
   padding: 10px;
-  border-radius:10px;
+  border-radius: 10px;
   min-width: 200px;
   &--message {
-      height: 150px;
-      max-height: 550px;
-      max-width: 400px;
-      margin-bottom: 20px;
-      width: 400px;
-      @media (max-width: 700px) {
-          width: 275px;
-      }
+    height: 150px;
+    max-height: 550px;
+    max-width: 400px;
+    margin-bottom: 20px;
+    width: 400px;
+    @media (max-width: 700px) {
+      width: 275px;
+    }
   }
   &--err {
     padding: 10px;
-    border-radius:10px;
+    border-radius: 10px;
     border-style: solid;
     border-color: rgb(161, 12, 12);
     border-width: 5px;
@@ -62,9 +62,9 @@
 
 .contact-btn-neon-wrapper {
   @include neon-wrapper;
-  margin-top:30px;
-  margin-bottom:30px;
-  max-width:150px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 150px;
 }
 
 .contact-btn-neon-text {
@@ -75,9 +75,9 @@
   display: block;
   padding: 0 2rem 0 2rem;
   &:hover {
-      color:#ffd8d8;
-      text-shadow: $neon-text-shadow-purple;
-      animation: letter-flicker 2s linear 3;
+    color: #ffd8d8;
+    text-shadow: $neon-text-shadow-purple;
+    animation: letter-flicker 2s linear 3;
   }
   cursor: pointer;
 }
@@ -87,6 +87,6 @@
   width: 2rem;
   margin-top: -45px;
   &:hover {
-      animation: spin 800ms forwards;
+    animation: spin 800ms forwards;
   }
 }

@@ -10,7 +10,7 @@
   font-size: 1.2rem;
   font-family: $font-text;
   @media (max-width: 600px) {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
@@ -20,7 +20,7 @@
   font-size: 4rem;
   margin-top: 50px;
   @media (max-width: 600px) {
-      font-size: 3rem;
+    font-size: 3rem;
   }
   @media (max-width: 400px) {
     font-size: 2.5rem;
@@ -45,10 +45,10 @@
   border-radius: 50%;
   background-color: #dfd6ce;
   &--active {
-      padding: 0px;
-      border: 2px solid #7766a7;
-      box-shadow: $light-neon-text-shadow-purple;
-      background-color: #8057f2;
+    padding: 0px;
+    border: 2px solid #7766a7;
+    box-shadow: $light-neon-text-shadow-purple;
+    background-color: #8057f2;
   }
   &:hover {
     padding: 0px;
@@ -72,7 +72,7 @@
   align-items: center;
   min-height: 700px;
   @media (max-width: 600px) {
-      min-height: 400px;
+    min-height: 400px;
   }
 }
 
@@ -85,22 +85,22 @@
     justify-content: center;
     &:hover {
       .work-slide-img-link {
-          visibility: visible;
-          opacity: 1;
+        visibility: visible;
+        opacity: 1;
       }
     }
   }
   &--inactive {
-      display: none;
+    display: none;
   }
 }
 
 .work-slide-img {
   @media (max-width: 800px) {
-      width: 450px;
+    width: 450px;
   }
   @media (max-width: 600px) {
-      width: 300px;
+    width: 300px;
   }
   border-radius: 10px;
   max-width: 600px;
@@ -130,10 +130,10 @@
   cursor: pointer;
   margin-top: 380px;
   @media (max-width: 800px) {
-      margin-top: 285px;
+    margin-top: 285px;
   }
   @media (max-width: 600px) {
-      margin-top: 190px;
+    margin-top: 190px;
   }
   padding-bottom: 0.3rem;
   &--prev {
@@ -142,19 +142,19 @@
     @media (max-width: 600px) {
       margin-right: 0px;
     }
-    border-radius:10px 3px 3px 10px;
+    border-radius: 10px 3px 3px 10px;
   }
   &--next {
-    right:20px;
+    right: 20px;
     margin-left: 20px;
     @media (max-width: 600px) {
       margin-left: 0px;
     }
-    border-radius:3px 10px 10px 3px;
+    border-radius: 3px 10px 10px 3px;
   }
   &:hover {
-      @include neon-text-animated;
-      transition: background-color 200ms ease-in-out;
+    @include neon-text-animated;
+    transition: background-color 200ms ease-in-out;
   }
 }
 
@@ -170,16 +170,16 @@
   text-decoration: none;
   font-size: 2rem;
   @media (max-width: 800px) {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
   @media (max-width: 600px) {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 .work-slide-description {
   text-align: justify;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     width: 300px;
   }
 }
@@ -212,10 +212,10 @@
   margin-top: 10px;
   font-size: 1.8rem;
   @media (max-width: 800px) {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
   @media (max-width: 600px) {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
   width: 100%;
   text-align: center;
@@ -232,6 +232,6 @@
 .work-slide-tech {
   width: 40px;
   @media (max-width: 650px) {
-      width: 30px;
+    width: 30px;
   }
 }

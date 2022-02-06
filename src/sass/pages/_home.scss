@@ -8,12 +8,12 @@
   align-items: center;
   justify-content: center;
   padding-top: 70px;
-  @media(max-width:600px) {
-    width:400px;
+  @media (max-width: 600px) {
+    width: 400px;
     padding-top: 40px;
   }
-  @media(max-width:400px) {
-    width:300px;
+  @media (max-width: 400px) {
+    width: 300px;
   }
 }
 
@@ -21,7 +21,7 @@
   @include neon-wrapper;
   display: flex;
   justify-content: center;
-  padding:5px 15px 5px 15px;
+  padding: 5px 15px 5px 15px;
 }
 
 .home-neon-pretext {
@@ -30,9 +30,9 @@
   font-size: 4rem;
   position: relative;
   left: -80px;
-  @media(max-width:600px) {
-      left: -50px;
-      font-size: 3rem;
+  @media (max-width: 600px) {
+    left: -50px;
+    font-size: 3rem;
   }
 }
 
@@ -43,13 +43,13 @@
   font-size: 8rem;
   display: block;
   padding: 0 2rem 0 2rem;
-  @media(max-width:600px) {
-      font-size: 5rem;
-      padding:0;
+  @media (max-width: 600px) {
+    font-size: 5rem;
+    padding: 0;
   }
   &:hover {
-      @include neon-text-purple;
-      animation: letter-flicker 2s linear 3;
+    @include neon-text-purple;
+    animation: letter-flicker 2s linear 3;
   }
 }
 
@@ -60,20 +60,20 @@
   margin-top: 10px;
   margin-left: 30px;
   font-size: 2rem;
-  @media(max-width: 600px) {
+  @media (max-width: 600px) {
     font-size: 1.5rem;
   }
   &--dev {
-      text-decoration: none;
-      font-size: 4rem;
-      margin-left: -20px;
-      @media(max-width: 600px) {
-        font-size: 3rem;
-      }
-      &:hover {
-        @include neon-text-purple;
-        animation: letter-flicker 2s linear 3;
-      }
+    text-decoration: none;
+    font-size: 4rem;
+    margin-left: -20px;
+    @media (max-width: 600px) {
+      font-size: 3rem;
+    }
+    &:hover {
+      @include neon-text-purple;
+      animation: letter-flicker 2s linear 3;
+    }
   }
 }
 
@@ -107,9 +107,9 @@
 .home-hire-me {
   @include light-neon-text-animated-purple;
   font-family: $font-title-double;
-  font-size: 2rem;
+  font-size: 1.8rem;
   @media (max-width: 600px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   &:hover {
     animation: letter-flicker 2s linear 3;
